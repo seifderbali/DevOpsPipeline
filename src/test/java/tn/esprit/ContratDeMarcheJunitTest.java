@@ -4,61 +4,72 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.entities.Budget;
-import tn.esprit.entities.ComiteTechnique;
-import tn.esprit.entities.DateValidation;
-import tn.esprit.services.ComiteTechniqueService;
+import tn.esprit.entities.ContatDeMarche;
+import tn.esprit.entities.Fournisseur;
+import tn.esprit.services.ContatDeMarcheService;
 
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class ComiteTechniqueServiceJunitTest {
+public class ContratDeMarcheJunitTest {
 
     @Autowired
-    ComiteTechniqueService comiteTechniqueService;
+    ContatDeMarcheService contatDeMarcheService;
+
     Budget budget =new Budget();
-    DateValidation dateValidation =new DateValidation();
-    ComiteTechnique c1 = new ComiteTechnique(11L,"21-02-2023","statutProjet","axeDemande","typeDemande","typeDemande",1L,"1/3/",dateValidation, budget);
-    ComiteTechnique c2 = new ComiteTechnique(51L,"21-02-2023","statutProjet","axeDemande","typeDemande","typeDemande",1L,"1/3/",dateValidation, budget);
+    Fournisseur fournisseur =new Fournisseur();
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+    Date date = sdf.parse("12-02-2023");
+
+
+    ContatDeMarche c1 = new ContatDeMarche(11L,"2102","statutProjet","axeDemande","10000","30002","1234","21-02-2023","observation",date,date,date,1L,budget,fournisseur);
+    ContatDeMarche c2 = new ContatDeMarche(51L,"2102","statutProjet","axeDemande","10000","30002","1234","21-02-2023","observation",date,date,date,1L,budget,fournisseur);
+
+    public ContratDeMarcheJunitTest() throws ParseException {
+    }
 
     @Test
     @Order(1)
-    public void testaddComiteTechnique() {
-        ComiteTechnique ComiteTechniqueAdded =  comiteTechniqueService.addComiteTechnique(c1);
-        Assertions.assertEquals(ComiteTechniqueAdded.getId(), ComiteTechniqueAdded.getId());
+    public void testaddContatDeMarche() {
+        ContatDeMarche ContatDeMarcheAdded =  contatDeMarcheService.addContatDeMarche(c1);
+        Assertions.assertEquals(ContatDeMarcheAdded.getId(), ContatDeMarcheAdded.getId());
     }
 
     @Test
     @Order(2)
-    public void testRetrieveAllComiteTechniques() {
-        List<ComiteTechnique> listComiteTechniques = comiteTechniqueService.retreiveAllComiteTechnique();
-        Assertions.assertEquals(listComiteTechniques.size(), listComiteTechniques.size());
+    public void testRetrieveAllContatDeMarches() {
+        List<ContatDeMarche> listContatDeMarches = contatDeMarcheService.retreiveAllContatDeMarche();
+        Assertions.assertEquals(listContatDeMarches.size(), listContatDeMarches.size());
     }
 
     @Order(3)
     @Test
-    public void testRetrieveComiteTechnique() {
-        ComiteTechnique ComiteTechniqueRetrieved = comiteTechniqueService.retrieveComiteTechnique(1L);
-        Assertions.assertEquals(1L, ComiteTechniqueRetrieved.getId().longValue());
+    public void testRetrieveContatDeMarche() {
+        ContatDeMarche ContatDeMarcheRetrieved = contatDeMarcheService.retrieveContatDeMarche(1L);
+        Assertions.assertEquals(1L, ContatDeMarcheRetrieved.getId().longValue());
     }
 
     @Test
 
     @Order(4)
-    public void testModifyComiteTechnique()   {
+    public void testModifyContatDeMarche()   {
 
-        ComiteTechnique ComiteTechniqueUpdated  = comiteTechniqueService.updateComiteTechnique(c2);
-        Assertions.assertEquals(c2.getId(), ComiteTechniqueUpdated.getId());
+        ContatDeMarche ContatDeMarcheUpdated  = contatDeMarcheService.updateContatDeMarche(c2);
+        Assertions.assertEquals(c2.getId(), ContatDeMarcheUpdated.getId());
     }
 
     @Test
 
     @Order(5)
-    public void testDeleteComiteTechnique() {
+    public void testDeleteContatDeMarche() {
 
-        comiteTechniqueService.deleteComiteTechnique(11L);
-        Assertions.assertEquals(null,comiteTechniqueService.retrieveComiteTechnique(11L).getId());
+        contatDeMarcheService.deleteContatDeMarche(11L);
+        Assertions.assertEquals(null,contatDeMarcheService.retrieveContatDeMarche(11L).getId());
 
 
     }

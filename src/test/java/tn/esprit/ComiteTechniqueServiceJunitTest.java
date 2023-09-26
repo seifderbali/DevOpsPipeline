@@ -19,8 +19,8 @@ public class ComiteTechniqueServiceJunitTest {
     ComiteTechniqueService comiteTechniqueService;
     Budget budget =new Budget();
     DateValidation dateValidation =new DateValidation();
-    ComiteTechnique c1 = new ComiteTechnique(11L,"21-02-2023","statutProjet","axeDemande","typeDemande","typeDemande",1L,dateValidation, budget);
-    ComiteTechnique c2 = new ComiteTechnique(51L,"21-02-2023","statutProjet","axeDemande","typeDemande","typeDemande",1L,dateValidation, budget);
+    ComiteTechnique c1 = new ComiteTechnique(11L,"21-02-2023","statutProjet","axeDemande","typeDemande","typeDemande",1L,"1/3/",dateValidation, budget);
+    ComiteTechnique c2 = new ComiteTechnique(51L,"21-02-2023","statutProjet","axeDemande","typeDemande","typeDemande",1L,"1/3/",dateValidation, budget);
 
     @Test
     @Order(1)
