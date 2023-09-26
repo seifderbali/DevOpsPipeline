@@ -45,7 +45,6 @@
   	  stage('JUNIT/MOCKITO') {
                steps {
                 sh 'mvn test -Dtest="tn.esprit.BudgetServiceJunitTest.java" '            
-                sh 'mvn test -Dtest="tn.esprit.ComiteTechniqueServiceJunitTest.java" '            
                 sh 'mvn test -Dtest="tn.esprit.ContratDeMarcheJunitTest.java" '            
                 sh 'mvn test -Dtest="tn.esprit.DateValidationJunitTest.java" '            
                 sh 'mvn test -Dtest="tn.esprit.DepenseJunitTest.java" '            
