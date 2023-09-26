@@ -26,6 +26,7 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.entities.Depense;
+import tn.esprit.entities.Facture;
 import tn.esprit.services.IContatDeMarcheService;
 import tn.esprit.services.IDepenseService;
 import tn.esprit.services.IFactureService;
@@ -83,11 +84,14 @@ public class DepenseController {
     }
 
 
-
     //STAGE PDF
-    @GetMapping("/genFacture/{fileName}")
-    HttpEntity<byte[]> createPdfStage(@PathVariable("fileName") String fileName) throws IOException, BadElementException {
+    @GetMapping("/genFacture/{did}/{fid}/{fileName}")
+    HttpEntity<byte[]> createPdfStage(@PathVariable("fileName") String fileName,@PathVariable("did") Long did,@PathVariable("fid") Long fid) throws IOException, BadElementException {
         /* first, get and initialize an engine */
+        Facture facture = new Facture();
+        facture = Fs.retrieveFacture(fid);
+        Depense depense = new Depense();
+        depense = Ds.retrieveDepense(did);
         VelocityEngine ve = new VelocityEngine();
         /* next, get the Template */
         ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
@@ -97,11 +101,28 @@ public class DepenseController {
         Template t = ve.getTemplate("templates/Stage.vm");
         /* create a context and add data */
         VelocityContext context = new VelocityContext();
-        context.put("name","seif");
-        context.put("niveau","NiveauCourantEt");
-        context.put("cycle","getCycleEt");
-        context.put("genDateTime", LocalDateTime.now().toString());
+        context.put("genDateTime", LocalDateTime.now().toLocalDate().toString());
+
+        context.put("number",depense.getNumFacture());
+        context.put("dateInsertion",depense.getDateInsertion());
+        context.put("SubjectFacture",depense.getObjetFacture());
+        context.put("statutFacture",depense.getStatutFacture());
+        context.put("montantFactureTND",depense.getMontantFactureTND());
+        context.put("devise",depense.getDevise());
+        context.put("description",depense.getDescription());
         /* now render the template into a StringWriter */
+        context.put("dateReceptionDCD",facture.getDateReceptionDCD());
+        context.put("dateEnvoiDirectionSupportMaintenance",facture.getDateEnvoiDirectionSupportMaintenance());
+        context.put("dateRetourDirectionSupportMaintenance",facture.getDateRetourDirectionSupportMaintenance());
+        context.put("dateValidationChefDepartement",facture.getDateValidationChefDepartement());
+        context.put("dateRetourValidationChefDepartement",facture.getDateRetourValidationChefDepartement());
+        context.put("dateIncidentFournisseur",facture.getDateIncidentFournisseur());
+        context.put("dateRegularizationFournisseur",facture.getDateRegularizationFournisseur());
+        context.put("dateEnvoiAssurance",facture.getDateEnvoiAssurance());
+        context.put("dateOrdonnancementDCD",facture.getDateOrdonnancementDCD());
+        context.put("dateRetourDCD",facture.getDateRetourDCD());
+        context.put("Date2OrdonnancementDCD",facture.getDate2OrdonnancementDCD());
+
         StringWriter writer = new StringWriter();
         t.merge(context, writer);
         /* show the World */
@@ -180,3 +201,4 @@ public class DepenseController {
     }
 
 }
+

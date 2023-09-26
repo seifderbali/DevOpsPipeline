@@ -29,6 +29,16 @@ public class BudgetController {
     {
         return Bs.retreiveAllBudgetMaintenance();
     }
+    @GetMapping("/displayBudgetInvestissements1/{id}")
+    List<Budget> displayBudgetInvestissements(@PathVariable("id") long id)
+    {
+        return Bs.retreiveAllBudgetInvestissement1(id);
+    }
+    @GetMapping("/displayBudgetMaintenances1/{id}")
+    List<Budget> displayBudgetMaintenances(@PathVariable("id") long id)
+    {
+        return Bs.retreiveAllBudgetMaintenance1(id);
+    }
 
     @PostMapping("/addBudgetInvestissement/{id}")
     void addBudgetInvestissement(@RequestBody Budget b, @PathVariable("id") int id)

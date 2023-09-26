@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -31,16 +32,39 @@ public class FournisseurService implements IFournisseurService{
             listFournisseurs = (List<Fournisseur>) fournisseurRepository.findAll();
             for(Fournisseur f : listFournisseurs)
             {
-              //  u.setUsers(null);
                 log.info("Fournisseur = "+f);
             }}
         catch(Exception e)
         {
             log.info("error = "+e);
         }
+        List<Fournisseur> fournisseurList = Arrays.asList(bubbleSort(listFournisseurs));
+        ;
+        return fournisseurList;       }
+    public Fournisseur[] bubbleSort(List<Fournisseur> arr) {
+        int n = arr.size();
+        boolean swapped;
+        Fournisseur[] fournisseurArray = arr.toArray(new Fournisseur[arr.size()]);
 
-        return listFournisseurs;       }
+        do {
+            swapped = false;
 
+            for (int i = 1; i < n; i++) {
+                if (fournisseurRepository.findBynbcontrat(fournisseurArray[i - 1].getId()) < fournisseurRepository.findBynbcontrat(fournisseurArray[i].getId())) {
+                    // Swap arr[i-1] and arr[i]
+                    Fournisseur temp = fournisseurArray[i - 1];
+                    fournisseurArray[i - 1] = fournisseurArray[i];
+                    fournisseurArray[i] = temp;
+                    swapped = true;
+                }
+            }
+
+            // After each pass, the largest element will be at the end
+            // So, reduce the array size by 1
+            n--;
+        } while (swapped);
+        return fournisseurArray;
+    }
     @Override
     public Fournisseur addFournisseur(Fournisseur f) {
         try

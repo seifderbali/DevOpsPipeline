@@ -52,7 +52,43 @@ public class BudgetService implements IBudgetService {
 
         return listBudgets;
     }
+    @Override
+    public List<Budget> retreiveAllBudgetInvestissement1(long id) {
+        List<Budget> listBudgets = new ArrayList<Budget>();
+        try {
+            listBudgets.addAll(budgetRepository.findAllBudgetInvestissement1(id));
+            listBudgets.addAll(budgetRepository.findAllBudgetInvestissement2(id));
+            for(Budget b : listBudgets)
+            {
+                //   u.setUsers(null);
+                log.info("user = "+b);
+            }}
+        catch(Exception e)
+        {
+            log.info("error = "+e);
+        }
 
+        return listBudgets;
+    }
+
+    @Override
+    public List<Budget> retreiveAllBudgetMaintenance1(long id) {
+        List<Budget> listBudgets = new ArrayList<Budget>();
+        try {
+            listBudgets.addAll(budgetRepository.findAllBudgetMaintenance1(id));
+            listBudgets.addAll(budgetRepository.findAllBudgetMaintenance2(id));
+            for(Budget b : listBudgets)
+            {
+                //   u.setUsers(null);
+                log.info("user = "+b);
+            }}
+        catch(Exception e)
+        {
+            log.info("error = "+e);
+        }
+
+        return listBudgets;
+    }
 
     @Override
     public Budget addBudgetInvestissement(Budget b) {

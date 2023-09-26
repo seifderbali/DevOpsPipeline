@@ -3,6 +3,7 @@ package tn.esprit.repositories;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import tn.esprit.entities.ContatDeMarche;
 import tn.esprit.entities.Fournisseur;
 
 import java.util.List;
@@ -20,4 +21,8 @@ public interface FournisseurRepository extends CrudRepository<Fournisseur, Long>
 
     @Query("select sum(b.montantTTC) from ContatDeMarche b where b.fournisseur.id =:#{#id}")
     String findBudget(long id );
+
+    @Query("select count(c) from ContatDeMarche c where c.fournisseur.id=:#{#id}")
+    int findBynbcontrat(long id);
+
 }

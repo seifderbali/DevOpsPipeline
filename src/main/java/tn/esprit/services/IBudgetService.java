@@ -9,6 +9,8 @@ public interface IBudgetService {
 
     List<Budget> retreiveAllBudgetInvestissement();
     List<Budget> retreiveAllBudgetMaintenance();
+    List<Budget> retreiveAllBudgetInvestissement1(long id);
+    List<Budget> retreiveAllBudgetMaintenance1(long id);
 
     Budget addBudgetInvestissement(Budget b);
     Budget addBudgetIMaintenance(Budget b);

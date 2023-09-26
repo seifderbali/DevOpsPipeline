@@ -31,6 +31,8 @@ public class ComiteTechnique {
     String observationComite;
     @Column(name="UserId")
     Long userId;
+    @Column(name="contributors")
+    String contributors;
 
     @OneToOne
     // @JsonIgnore

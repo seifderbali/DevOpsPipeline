@@ -21,9 +21,12 @@ public interface BudgetRepository extends CrudRepository<Budget, Long> {
     Budget findContrat(long id );
 
 
-
     @Query("select b from Budget b where b.type = 'Investissement'")
     List<Budget> findAllBudgetInvestissement();
+    @Query("select b from Budget b where b.type = 'Investissement' and b.userId = ?1")
+    List<Budget> findAllBudgetInvestissement1(long id);
+    @Query("select b from Budget b where b.type = 'Investissement' and b.userId != ?1")
+    List<Budget> findAllBudgetInvestissement2(long id);
     @Query("select b from Budget b where b.type = 'Investissement' ORDER BY b.anneebudgetaire DESC")
     List<Budget> findAllBudgetInvestissementSortByDate();
     @Query("select b from Budget b where b.type = 'Investissement' ORDER BY b.coutEtudeServ DESC")
@@ -34,6 +37,10 @@ public interface BudgetRepository extends CrudRepository<Budget, Long> {
     List<Budget> findAllBudgetInvestissementSortByCoutMaterliel();
     @Query("select b from Budget b where b.type = 'Maintenance'")
     List<Budget> findAllBudgetMaintenance();
+    @Query("select b from Budget b where b.type = 'Maintenance' and b.userId = ?1")
+    List<Budget> findAllBudgetMaintenance1(long id);
+    @Query("select b from Budget b where b.type = 'Maintenance' and b.userId != ?1")
+    List<Budget> findAllBudgetMaintenance2(long id);
     @Query("select b from Budget b where b.type = 'Maintenance' ORDER BY b.anneebudgetaire DESC")
     List<Budget> findAllBudgetMaintenanceSortByDate();
     @Query("select b from Budget b where b.type = 'Maintenance' ORDER BY b.coutEtudeServ DESC")
