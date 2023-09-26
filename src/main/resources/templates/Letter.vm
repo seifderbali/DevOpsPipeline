@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<p style="text-align:right">&nbsp;</p>
+
+<p style="text-align:right">&nbsp;</p>
+
+<p style="text-align:right">&nbsp;</p>
+
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+
+<p style="text-align:right">Tunis, le $genDateTime</p>
+
+<p style="text-align:center"><strong>Lettre d&rsquo;affectation</strong></p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p>Suite &agrave; l&rsquo;accord de la Soci&eacute;t&eacute;&nbsp;: <strong>$societe</strong><br />
+    &nbsp;&nbsp;&nbsp; &nbsp;</p>
+
+<p><strong>&nbsp;&nbsp;&nbsp; &nbsp;L&rsquo;&eacute;tudiant(e): $name <br />
+    &nbsp; &nbsp; &nbsp;Inscrit(e) en&nbsp;: $niveau &egrave;me Ann&eacute;e $cycle &nbsp;</strong></p>
+
+<p>&nbsp;&nbsp; &nbsp;<br />
+    est affect&eacute;e &agrave; <strong>&laquo; $societe &raquo;</strong> pour effectuer un stage obligatoire, et ce du $datedeb au $datefin .&nbsp;<br />
+    Par ailleurs, il/elle est assur&eacute;(e)aupr&egrave;s de la GAT Assurances par le contrat N&deg;201209100016.&nbsp;<br />
+    &nbsp;</p>
+
+<p style="text-align:right">D&eacute;partement des Stages&nbsp;<br />
+    Ramla BEN OUIRANE</p>
+
+<p style="text-align:right">&nbsp;</p>
+
+
+<p style="text-align:right"><img alt="" src="https://i.ibb.co/QDBrsNv/signature.png" style="height:91px; width:200px" /></p>

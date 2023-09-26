@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<p style="text-align:right">&nbsp;</p>
+
+<p style="text-align:right">&nbsp;</p>
+
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+
+<p style="text-align:right">Tunis, le $genDateTime</p>
+<p style="text-align:right">&nbsp;</p>
+<p style="text-align:center"><strong>A l&rsquo;aimable attention de la Direction G&eacute;n&eacute;rale</strong></p>
+<p style="text-align:right">&nbsp;</p>
+
+<p><strong>Objet&nbsp;:</strong> Demande de Stage Obligatoire &nbsp;&nbsp; &nbsp;<br />
+    Madame, Monsieur,&nbsp;</p>
+<p style="text-align:right">&nbsp;</p>
+<p>L&rsquo;Ecole Sup&eacute;rieure Priv&eacute;e d&rsquo;Ing&eacute;nierie et de Technologies, ESPRIT SA, est un &eacute;tablissement d&rsquo;enseignement sup&eacute;rieur priv&eacute; ayant pour objet principal, la formation d&rsquo;ing&eacute;nieurs dans le domaine des technologies de l&rsquo;information et de la communication.&nbsp;<br />
+    &nbsp;&nbsp; &nbsp;&nbsp;<br />
+    Notre objectif consiste &agrave; former des ing&eacute;nieurs op&eacute;rationnels d&egrave;s leur sortie d&rsquo;&eacute;cole&nbsp;;<br />
+    &nbsp;&nbsp; &nbsp;<br />
+    C&rsquo;est dans ce but que nous encourageons nos &eacute;l&egrave;ves &agrave; mettre en pratique le savoir qu&rsquo;ils ont acquis au cours de leur cursus universitaire.&nbsp;<br />
+    &nbsp;<br />
+    C&rsquo;est &eacute;galement dans le but de les amener &agrave; s&rsquo;int&eacute;grer dans l&rsquo;environnement de l&rsquo;entreprise que nous vous demandons de bien vouloir accepter&nbsp;<br />
+<p style="text-align:right">&nbsp;</p>
+    &nbsp;&nbsp; <strong>&nbsp;L&rsquo;&eacute;tudiant(e) : $name <br />
+        &nbsp;&nbsp; &nbsp;Inscrit(e) en&nbsp;: $niveau &egrave;me Ann&eacute;e $cycle &nbsp;</strong><br />
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+    pour effectuer un stage obligatoire, au sein de votre honorable soci&eacute;t&eacute;.<br />
+    Nous restons &agrave; votre enti&egrave;re disposition pour tout renseignement compl&eacute;mentaire.<br />
+    En vous remerciant pour votre pr&eacute;cieux soutien, nous vous prions d&rsquo;agr&eacute;er, Madame, Monsieur, l&rsquo;expression de nos salutations distingu&eacute;es.&nbsp;<br />
+    &nbsp;</p>
+
+<p style="text-align:right"><br />
+    D&eacute;partement des Stages&nbsp;<br />
+    Ramla BEN OUIRANE</p>
+
+
+
+<p style="text-align:right">&nbsp;</p>
+
+
+<p style="text-align:right"><img alt="" src="https://ckeditor.com/apps/ckfinder/userfiles/files/signature.png" style="height:91px; width:200px" /></p>
