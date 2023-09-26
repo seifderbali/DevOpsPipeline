@@ -42,6 +42,21 @@
 
                       }
                         }
+  	  stage('JUNIT/MOCKITO') {
+               steps {
+                sh 'mvn test -Dtest="tn.esprit.BudgetServiceJunitTest.java" '            
+                sh 'mvn test -Dtest="tn.esprit.ComiteTechniqueServiceJunitTest.java" '            
+                sh 'mvn test -Dtest="tn.esprit.ContratDeMarcheJunitTest.java" '            
+                sh 'mvn test -Dtest="tn.esprit.DateValidationJunitTest.java" '            
+                sh 'mvn test -Dtest="tn.esprit.DepenseJunitTest.java" '            
+                sh 'mvn test -Dtest="tn.esprit.FactureServiceJunitTest.java" '            
+                sh 'mvn test -Dtest="tn.esprit.FournisseurServiceJunitTest.java" '            
+                sh 'mvn test -Dtest="tn.esprit.ProjetInvestissementJunitTest.java" '            
+                sh 'mvn test -Dtest="tn.esprit.UserServiceJunitTest.java" '            
+         	     }
+           
+           
+      	  }
 
             stage('Nexus Deploy') {
                  steps {
