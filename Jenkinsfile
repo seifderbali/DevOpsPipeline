@@ -36,7 +36,7 @@
                steps {
                  sh "mvn sonar:sonar \
                        -Dsonar.projectKey=BiatDSI \
-                       -Dsonar.host.url=http://192.168.0.14:9000 \
+                       -Dsonar.host.url=http://192.168.1.14:9000 \
                        -Dsonar.login=cb88a6d5fa5ddfa3f62e331bc84dfa25151d5786"
                     echo "sonar succefully"
 
